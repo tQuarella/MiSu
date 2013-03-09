@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Name:</b>
+  <%= @clothing_item.name %>
+</p>
+ 
+<p>
+  <b>Description:</b>
+  <%= @clothing_item.description %>
+</p>
+
+<p>
+	<b>Tags:</b>
+	<%= join_tags(@clothing_item) %>
+</p>
+<h2>Comments</h2>
+<%= render @clothing_item.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+ 
+<%= link_to 'Edit Post', edit_clothing_item_path(@clothing_item) %> |
+<%= link_to 'Back to Posts', clothing_items_path %> |

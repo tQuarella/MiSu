@@ -1,0 +1,29 @@
+<% @clothing_item.tags.build %>
+<%= form_for(@clothing_item) do |clothing_item_form| %>
+  <% if @clothing_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clothing_item.errors.count, "error") %> prohibited this clothing_item from being saved:</h2>
+
+      <ul>
+      <% @clothing_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= clothing_item_form.label :name %><br />
+    <%= clothing_item_form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= clothing_item_form.label :description %><br />
+    <%= clothing_item_form.text_area :description %>
+  </div>  
+  <h2>Tags</h2>
+  <%= render :partial => 'tags/form',
+  			 :locals => {:form => clothing_item_form} %>	
+  <div class="actions">
+    <%= clothing_item_form.submit %>
+  </div>
+<% end %>

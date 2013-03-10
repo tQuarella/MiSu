@@ -1,4 +1,6 @@
 MiSu::Application.routes.draw do
+  get "users/new"
+
   resources :clothing_items
 
   get "home/index"

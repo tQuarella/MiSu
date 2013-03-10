@@ -1,6 +1,4 @@
 class ClothingItemsController < ApplicationController
-  
-  http_basic_authenticate_with :name => "dhh", :password => "secret", :except => [:index, :show]
   # GET /clothing_items
   # GET /clothing_items.json
   def index

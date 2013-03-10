@@ -9,10 +9,7 @@ gem 'bcrypt-ruby', '3.0.1'
 group :development, :test do
   gem 'sqlite3'
   gem 'annotate', '2.5.0'
-end
-
-group :production, :staging do
-  gem 'pg', '0.12.2'
+  gem 'rspec-rails', '2.11.0'
 end
 
 # Gems used only for assets and not required
@@ -28,6 +25,14 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test do
+  gem 'capybara', '1.1.2'
+end
+
+group :production, :staging do
+  gem 'pg', '0.12.2'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
